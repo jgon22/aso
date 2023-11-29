@@ -1,0 +1,24 @@
+;
+; BIND data file for delarioja.red reverse zone
+; Fichero de zona inversa de delarioja.red para BIND
+; por Fernando Barcina
+;
+$TTL    1d
+$ORIGIN 168.192.in-addr.arpa.
+@       IN      SOA     dns1.delarioja.red. fernando.delarioja.red. (
+                 2020102801         ; Serial AÃ±oMesDÃ­aNÃºmerocorrelativo
+                         2h         ; Refresh
+                         1h         ; Retry
+                         2w         ; Expire
+                         1d )       ; Negative Cache TTL
+;
+@               IN      NS      dns1.delarioja.red.
+100.1           IN      PTR     delarioja.red.
+100.1           IN      PTR     dns1.delarioja.red.
+1.1             IN      PTR     dns2.delarioja.red.
+100.2           IN      PTR     servidor2.delarioja.red.
+10.1            IN      PTR     cliente10-red1.delarioja.red.
+$GENERATE 20-50 $.1             IN      PTR     cliente$-red1.delarioja.red.
+$GENERATE 20-50 $.2             IN      PTR     cliente$-red2.delarioja.red.
+100.1           IN      PTR     correo.delarioja.red.
+1.1             IN      PTR     correo2.delarioja.red.
